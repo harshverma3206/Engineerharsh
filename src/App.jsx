@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+
 import Hero from './Pages/Hero'
 import NotFound from './Components/NotFound'
 
