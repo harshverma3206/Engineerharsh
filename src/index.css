@@ -1,11 +1,35 @@
 @import "tailwindcss";
 
+:root {
+
+  /* colors */
+  --primarycolor: #5EEB5B;
+  --secondarycolor: #62AB37;
+  --extralightcolor: #61FF7E;
+  --spacingcolor: #A6EBC9;
+  --coloringcolor: #393424;
+
+  /* fonts */
+  --primaryfont:  font-family: "Marko One", serif;
+  --normalfont:   font-family: "Montserrat", sans-serif;
+  --displayfont:  font-family: "Sarina", cursive;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: Gilroy, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -webkit-user-select: none;
 }
 
 html,
@@ -24,4 +48,17 @@ img {
 button {
   cursor: pointer;
   border: none;
+}
+
+a {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 3.8rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  font-size: 5rem;
 }
