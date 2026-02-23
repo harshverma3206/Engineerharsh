@@ -28,7 +28,7 @@ const PartitionPage = () => {
           ></div>
 
           <NavLink
-            className='cursor-default opacity-70 w-[450px] h-[450px] hover: rounded-full block font-[var(--font-heading)] uppercase text-center overflow-hidden whitespace-nowrap text-[#080357]'
+            className='cursor-default opacity-70 w-112.5 h-112.5 hover: rounded-full block uppercase text-center overflow-hidden whitespace-nowrap text-[#080357]'
             to="/normalversion"
           >
            
@@ -41,7 +41,7 @@ const PartitionPage = () => {
           </NavLink>
 
           <NavLink
-            className='cursor-default opacity-70 w-[450px] h-[450px] block font-[var(--font-heading)] uppercase text-center whitespace-nowrap rounded-full overflow-hidden'
+            className='cursor-default opacity-70 w-112.5 h-112.5 block uppercase text-center whitespace-nowrap rounded-full overflow-hidden'
             to="/advancedversion"
           >
             <p>Advanced Advanced</p>

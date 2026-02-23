@@ -3,16 +3,16 @@
 :root {
 
   /* colors */
-  --primarycolor: #5EEB5B;
-  --secondarycolor: #62AB37;
+  --primarycolor: #62AB37;
+  --secondarycolor: #5EEB5B;
   --extralightcolor: #61FF7E;
   --spacingcolor: #A6EBC9;
   --coloringcolor: #393424;
 
   /* fonts */
-  --primaryfont:  font-family: "Marko One", serif;
-  --normalfont:   font-family: "Montserrat", sans-serif;
-  --displayfont:  font-family: "Sarina", cursive;
+  --primaryfont: "Young Serif", serif;
+  --normalfont: "Montserrat", sans-serif;
+  --displayfont: "Dancing Script", cursive;
 }
 
 * {
@@ -48,6 +48,7 @@ img {
 button {
   cursor: pointer;
   border: none;
+  /* background-color: var(--primarycolor); */
 }
 
 a {
@@ -61,4 +62,38 @@ a {
 
 a:hover {
   font-size: 5rem;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 900;
+  font-family: var(--primaryfont);
+  line-height: .9;
+  letter-spacing: 2px;
+  font-size: 6rem;
+  color: var(--primarycolor);
+}
+
+h3 {
+  font-family: var(--displayfont);
+  font-weight: 900;
+  line-height: 80px;
+}
+
+h4 {
+  font-family: var(--normalfont);
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: end;
+}
+
+h5 {
+  font-family: var(--normalfont);
+  font-size: 1.3rem;
+  text-align: end;
+}
+
+h6{
+  font-family: var(--normalfont);
+  font-size: 1.1rem;
 }
