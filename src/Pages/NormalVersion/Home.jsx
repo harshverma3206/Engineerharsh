@@ -1,8 +1,12 @@
 
 
+
+import { useRef } from "react";
 import { IoCall } from "react-icons/io5";
 
 const Home = () => {
+    const homeref = useRef();
+
     return (
         <section
             ref={homeref}

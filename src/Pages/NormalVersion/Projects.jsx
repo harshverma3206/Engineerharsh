@@ -1,24 +1,29 @@
 
+import { useRef } from 'react'
 
-const projectdata = [
-    {
-        img: "/CalcodeskPage.jpg",
-        name: "Calcodesk",
-        description: "Calcodesk is a service- based company located in Noida, delivering complete digital solutions for modern businesses.We specialize in web development, app development, digital marketing, social media management, and video editing.Our mission is to help brands grow with innovative strategies and impactful digital experiences."
-    },
-    {
-        img: "/CalcodeskPage.jpg",
-        name: "Calcodesk",
-        description: "Calcodesk is a service- based company located in Noida, delivering complete digital solutions for modern businesses.We specialize in web development, app development, digital marketing, social media management, and video editing.Our mission is to help brands grow with innovative strategies and impactful digital experiences."
-    },
-    {
-        img: "/CalcodeskPage.jpg",
-        name: "Calcodesk",
-        description: "Calcodesk is a service- based company located in Noida, delivering complete digital solutions for modern businesses.We specialize in web development, app development, digital marketing, social media management, and video editing.Our mission is to help brands grow with innovative strategies and impactful digital experiences."
-    }
-]
 
 const Projects = () => {
+
+    const projectsref = useRef()
+
+    const projectdata = [
+        {
+            img: "/CalcodeskPage.jpg",
+            name: "Calcodesk",
+            description: "Calcodesk is a service- based company located in Noida, delivering complete digital solutions for modern businesses.We specialize in web development, app development, digital marketing, social media management, and video editing.Our mission is to help brands grow with innovative strategies and impactful digital experiences."
+        },
+        {
+            img: "/CalcodeskPage.jpg",
+            name: "Calcodesk",
+            description: "Calcodesk is a service- based company located in Noida, delivering complete digital solutions for modern businesses.We specialize in web development, app development, digital marketing, social media management, and video editing.Our mission is to help brands grow with innovative strategies and impactful digital experiences."
+        },
+        {
+            img: "/CalcodeskPage.jpg",
+            name: "Calcodesk",
+            description: "Calcodesk is a service- based company located in Noida, delivering complete digital solutions for modern businesses.We specialize in web development, app development, digital marketing, social media management, and video editing.Our mission is to help brands grow with innovative strategies and impactful digital experiences."
+        }
+    ]
+
     return (
         <section
             ref={projectsref}
