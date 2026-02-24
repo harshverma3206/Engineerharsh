@@ -1,18 +1,18 @@
 import Navbar from "./Navbar"
-import Home from "./Home"
 import About from "./About"
 import Projects from "./Projects"
+import Skills from "./Skills"
+import Contact from "./Contact"
 
 const NormalVersion = () => {
 
   return (
-    <div className='p-10! relative'>
+    <div className='p-10! relative gap-20 flex flex-col bg-amber-300'>
       <Navbar />
-      <Home />
       <About />
       <Projects />
-      {/* <Skills /> */}
-      {/* <Contact /> */}
+      <Skills />
+      <Contact />
     </div>
   )
 }
