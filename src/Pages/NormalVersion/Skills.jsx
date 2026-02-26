@@ -1,12 +1,10 @@
-import { useRef } from 'react'
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import { forwardRef, useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-const Skills = () => {
+const Skills = forwardRef((props, ref) => {
 
-    const skillsref = useRef()
-
-    const skilldata = [
+    const skillData = [
         { img: "/html.svg" },
         { img: "/Css.svg" },
         { img: "/javascript.svg" },
@@ -19,60 +17,76 @@ const Skills = () => {
         { img: "/threejs.svg" },
         { img: "/typescript.svg" },
         { img: "/vercel.svg" }
-    ]
+    ];
 
-    //Animations
+    const containerRef = useRef();
     const moverefOne = useRef();
     const moverefTwo = useRef();
     const animation = useRef();
 
+    // GSAP Animation
     useGSAP(() => {
         animation.current = gsap.to(
             [moverefOne.current, moverefTwo.current],
             {
-                x: -2135,
-                duration: 10,
+                xPercent: -100,
+                duration: 15,
                 repeat: -1,
                 ease: "linear",
             }
         );
-    }, []);
+    }, { scope: containerRef });
 
-    const { contextSafe } = useGSAP();
-
-    const handleMouseEnter = contextSafe(() => {
+    const handleMouseEnter = () => {
         animation.current?.pause();
-    });
+    };
 
-    const handleMouseLeave = contextSafe(() => {
+    const handleMouseLeave = () => {
         animation.current?.resume();
-    });
+    };
 
     return (
-        <section ref={skillsref} className='overflow-hidden py-12! bg-teal-300'><h1>skills that i own</h1>
+        <section ref={ref} className="overflow-hidden py-12 min-h-screen">
+
+            <h1 className="text-5xl text-center font-bold">
+                skills that I own
+            </h1>
+
             <div
+                ref={containerRef}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className='flex gap-12 mt-12! cursor-pointer py-12!'>
+                className="flex gap-5 mt-12 cursor-pointer py-12 w-[85%] mx-auto overflow-hidden"
+            >
 
-                <div ref={moverefOne} className='flex gap-12'>
-                    {skilldata.map((val, index) => (
-                        <div key={index} className='rounded-4xl h-32.5 w-32.5 flex items-center justify-center p-8! shrink-0 bg-gray-200'>
-                            <img src={val.img} alt="" />
+                {/* First Row */}
+                <div ref={moverefOne} className="flex gap-5">
+                    {skillData.map((val, index) => (
+                        <div
+                            key={index}
+                            className="rounded-4xl h-32 w-32 flex items-center justify-center p-8 shrink-0 bg-gray-200"
+                        >
+                            <img src={val.img} alt="skill" />
                         </div>
                     ))}
                 </div>
 
-                <div ref={moverefTwo} className='flex gap-12'>
-                    {skilldata.map((val, index) => (
-                        <div key={index} className='rounded-4xl h-32.5 w-32.5 flex items-center justify-center p-8! shrink-0 bg-gray-200'>
-                            <img src={val.img} alt="" />
+                {/* Duplicate Row (Infinite Effect) */}
+                <div ref={moverefTwo} className="flex gap-5">
+                    {skillData.map((val, index) => (
+                        <div
+                            key={`duplicate-${index}`}
+                            className="rounded-4xl h-32 w-32 flex items-center justify-center p-8 shrink-0 bg-gray-200"
+                        >
+                            <img src={val.img} alt="skill" />
                         </div>
                     ))}
                 </div>
+
             </div>
-        </section>
-    )
-}
 
-export default Skills
+        </section>
+    );
+});
+
+export default Skills;
