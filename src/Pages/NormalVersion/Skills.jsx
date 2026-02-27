@@ -46,7 +46,7 @@ const Skills = forwardRef((props, ref) => {
     };
 
     return (
-        <section ref={ref} className="overflow-hidden py-12 min-h-screen">
+        <section ref={ref} className="overflow-hidden py-12!">
 
             <h1 className="text-5xl text-center font-bold">
                 skills that I own

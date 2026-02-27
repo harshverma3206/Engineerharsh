@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -35,8 +36,10 @@ function NormalVersion() {
     sections.forEach((sec) => {
       ScrollTrigger.create({
         trigger: sec.ref.current,
-        start: "top center",
-        end: "bottom center",
+        start: "top 25%",
+        end: "bottom 25%",
+        scrub:true,
+       
         onEnter: () => setActiveSection(sec.id),
         onEnterBack: () => setActiveSection(sec.id),
       });
@@ -45,7 +48,7 @@ function NormalVersion() {
 
   return (
     <>
-      <div className="sm:p-7!">
+      <div className="sm:p-7! flex flex-col gap-10">
 
         <Navbar
           activeSection={activeSection}
@@ -53,9 +56,9 @@ function NormalVersion() {
           scrollToSection={scrollToSection} />
 
         <About ref={aboutRef} />
-        {/* <Projects ref={projectsRef} /> */}
-        {/* <Skills ref={skillsRef} /> */}
-        {/* <Contact ref={contactRef} /> */}
+        <Projects ref={projectsRef} />
+        <Skills ref={skillsRef} />
+        <Contact ref={contactRef} />
       </div>
     </>
   );

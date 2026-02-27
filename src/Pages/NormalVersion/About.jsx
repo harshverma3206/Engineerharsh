@@ -3,8 +3,8 @@ import { IoCall } from "react-icons/io5";
 
 const About = forwardRef((props, ref) => {
     return (
-        <section ref={ref} className=" flex flex-col items-center">
-            <h1 className=" mt-10! md:text-7xl sm:text-6xl text-4xl">
+        <section ref={ref} className=" flex flex-col items-center ">
+            <h1 className="">
                 building fast <br />
                 interactive web <br />
                 applications
@@ -33,8 +33,8 @@ hover:shadow-[0px_0px_20px_rgba(249,115,22,0.5),0px_5px_5px_-1px_rgba(200,80,10,
                     <h3 className="text-6xl md:text-8xl absolute -bottom-8 md:bottom-10 md:-left-12 md:w-50! justify-end leading-10! md:leading-17!">harsh verma</h3>
                 </div>
                 <div className=" p-6! pt-20! sm:w-137.5! md:w-115! flex flex-col items-end justify-end text-orange-50">
-                    <h4 className="text-[1.5rem] lg:text-[1.8rem] uppercase font-semibold!">Frontend Engineer</h4>
-                    <h5 className="text-[.9rem] lg:text-[1rem]">Frontend Developer with experience in React and modern web technologies. Passionate about creating clean, responsive designs and smooth animations using tools like GSAP and Lenis.</h5>
+                    <h4 className="">Frontend Engineer</h4>
+                    <h5 className="">Frontend Developer with experience in React and modern web technologies. Passionate about creating clean, responsive designs and smooth animations using tools like GSAP and Lenis.</h5>
                     <div className="mt-20! lg:mt-50!">
                         <h5>+91 9795357073</h5>
                         <h5>harshverma3206@gmail.com</h5>

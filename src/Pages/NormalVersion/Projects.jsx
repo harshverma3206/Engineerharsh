@@ -1,4 +1,10 @@
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { forwardRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger)
+
 
 const Projects = forwardRef((props, ref) => {
 
@@ -23,34 +29,54 @@ const Projects = forwardRef((props, ref) => {
         }
     ];
 
-    return (
-        <section ref={ref} className="py-12 min-h-screen">
 
-            <h1 className="text-5xl text-center font-bold mb-16">
-                help founders to convert <br />
-                ideas into digital <br />
+    useGSAP(() => {
+
+        gsap.utils.toArray('.card').forEach((card) => {
+            gsap.to(card, {
+                scale: 0.8,
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: card,
+                    scrub: true,
+                    start: "top 10%",
+                    end: "bottom 10%",
+                    markers: true,
+                }
+            })
+        })
+    }, []);
+
+
+    return (
+        <section ref={ref} className="p-7!">
+
+            <h1 className="lg:w-200 m-auto!">
+                help founders to convert
+                ideas into digital
                 experience
             </h1>
 
-            <div className="flex flex-col gap-20 items-center">
+            <div className="mt-10! flex flex-col justify-center items-center gap-15">
                 {projectData.map((data, index) => (
                     <div
+                        ref={ref}
                         key={index}
-                        className="w-[80%] flex flex-col items-center p-10 rounded-3xl gap-6 shadow-lg"
+                        className="card flex flex-col items-center text-center justify-center p-4! rounded-2xl bg-orange-600 text-orange-50 lg:w-250 sticky top-[10%]"
                     >
                         <img
-                            className="rounded-4xl h-150 object-cover"
+                            className="rounded-xl w-162.5 object-cover"
                             src={data.img}
                             alt={data.name}
                         />
 
-                        <h4 className="uppercase text-center text-4xl font-bold">
+                        <h4 className="mt-5!">
                             {data.name}
                         </h4>
 
-                        <p className="max-w-4xl text-center text-lg">
+                        <h5 className="text-center!">
                             {data.description}
-                        </p>
+                        </h5>
                     </div>
                 ))}
             </div>
