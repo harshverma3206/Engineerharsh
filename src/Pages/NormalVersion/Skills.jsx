@@ -29,7 +29,7 @@ const Skills = forwardRef((props, ref) => {
         animation.current = gsap.to(
             [moverefOne.current, moverefTwo.current],
             {
-                xPercent: -100,
+                xPercent: -100.01,
                 duration: 15,
                 repeat: -1,
                 ease: "linear",
@@ -45,10 +45,44 @@ const Skills = forwardRef((props, ref) => {
         animation.current?.resume();
     };
 
+    useGSAP(() => {
+        var tl = gsap.timeline()
+        gsap.utils.toArray('.skill').forEach((skill) => {
+
+            tl.from(skill, {
+                y: 180,
+                opacity: 0,
+                stagger: .5,
+                scrollTrigger: {
+                    trigger: skill,
+                    start: "top 60%",
+                }
+
+            })
+
+            skill.addEventListener("mouseenter", () => {
+                gsap.to(skill, {
+                    scale: 1.1,
+                    y: -35,
+                    duration: 0.4,
+                    ease: "power2.out"
+                })
+            })
+            skill.addEventListener("mouseleave", () => {
+                gsap.to(skill, {
+                    scale: 1,
+                    y: 0,
+                    duration: 0.3,
+                    ease: "power2.out",
+                });
+            });
+        })
+    })
+
     return (
         <section ref={ref} className="overflow-hidden py-12!">
 
-            <h1 className="text-5xl text-center font-bold">
+            <h1 className="">
                 skills that I own
             </h1>
 
@@ -56,15 +90,15 @@ const Skills = forwardRef((props, ref) => {
                 ref={containerRef}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className="flex gap-5 mt-12 cursor-pointer py-12 w-[85%] mx-auto overflow-hidden"
+                className="flex gap-7 mt-8! cursor-pointer py-12 w-[83%] mx-auto! overflow-hidden"
             >
 
                 {/* First Row */}
-                <div ref={moverefOne} className="flex gap-5">
+                <div ref={moverefOne} className="flex gap-7 py-12!">
                     {skillData.map((val, index) => (
                         <div
                             key={index}
-                            className="rounded-4xl h-32 w-32 flex items-center justify-center p-8 shrink-0 bg-gray-200"
+                            className="skill rounded-4xl h-[15vw] w-[15vw] md:h-24 md:w-24 lg:w-32 lg:h-32 p-3! md:p-6! flex items-center justify-center shrink-0 overflow-hidden bg-gray-200"
                         >
                             <img src={val.img} alt="skill" />
                         </div>
@@ -72,11 +106,11 @@ const Skills = forwardRef((props, ref) => {
                 </div>
 
                 {/* Duplicate Row (Infinite Effect) */}
-                <div ref={moverefTwo} className="flex gap-5">
+                <div ref={moverefTwo} className="flex gap-7 py-12!">
                     {skillData.map((val, index) => (
                         <div
                             key={`duplicate-${index}`}
-                            className="rounded-4xl h-32 w-32 flex items-center justify-center p-8 shrink-0 bg-gray-200"
+                            className="skill rounded-4xl h-[15vw] w-[15vw] md:h-24 md:w-24 lg:w-32 lg:h-32 p-3! md:p-6! flex items-center justify-center overflow-hidden shrink-0 bg-gray-200"
                         >
                             <img src={val.img} alt="skill" />
                         </div>

@@ -38,10 +38,11 @@ const Projects = forwardRef((props, ref) => {
                 opacity: 0,
                 scrollTrigger: {
                     trigger: card,
-                    scrub: true,
+                    scrub: 2,
                     start: "top 10%",
                     end: "bottom 10%",
-                    markers: true,
+                    pin:true
+                 
                 }
             })
         })
@@ -49,23 +50,23 @@ const Projects = forwardRef((props, ref) => {
 
 
     return (
-        <section ref={ref} className="p-7!">
+        <section ref={ref} className="p-10! ">
 
-            <h1 className="lg:w-200 m-auto!">
+            <h1 className="lg:w-200 m-auto! ">
                 help founders to convert
                 ideas into digital
                 experience
             </h1>
 
-            <div className="mt-10! flex flex-col justify-center items-center gap-15">
+            <div className="flex flex-col justify-center items-center gap-15 lg:gap-25">
                 {projectData.map((data, index) => (
                     <div
                         ref={ref}
                         key={index}
-                        className="card flex flex-col items-center text-center justify-center p-4! rounded-2xl bg-orange-600 text-orange-50 lg:w-250 sticky top-[10%]"
+                        className="card flex flex-col items-center text-center justify-center p-4! rounded-2xl lg:rounded-4xl bg-orange-600 text-orange-50 lg:w-280 lg:px-44! lg:py-22! sticky top-[10%]"
                     >
                         <img
-                            className="rounded-xl w-162.5 object-cover"
+                            className="rounded-xl w-182.5 object-cover"
                             src={data.img}
                             alt={data.name}
                         />
