@@ -13,13 +13,17 @@ const iconMap = {
 
 const Navbar = ({ sections, scrollToSection, activeSection }) => {
     return (
-        <nav className="flex flex-col p-7! gap-5 w-fit fixed left-0 top-1/2 -translate-y-1/2 z-50">
+        <nav className="flex flex-col lg:p-7! md:p-5! p-3! gap-5 w-fit fixed left-0 top-1/2 -translate-y-1/2 z-50">
             {sections.map((sec) => (
                 <button
                     key={sec.id}
                     onClick={() => scrollToSection(sec.ref)}
-                    className={`text-3xl p-4! rounded-2xl bg-gray-200 hover:bg-[#62AB37] hover:text-white transition-colors duration-200
-                        ${activeSection === sec.id ? "bg-green-500 text-white" : "bg-gray-200"}`}
+                    className={`p-4! rounded-2xl sm:text-xl md:text-2xl lg:text-3xl
+                        hover:bg-[#10140d] hover:text-white transition-all duration-700
+                       ${activeSection === sec.id
+                            ? "bg-[#F97316] text-white"
+                            : "bg-gray-200 text-black hover:bg-[#F97316]-300"
+                        }`}
                 >
 
                     {iconMap[sec.id]}

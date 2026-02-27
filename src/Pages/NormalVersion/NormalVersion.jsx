@@ -29,8 +29,6 @@ function NormalVersion() {
     { id: "contact", ref: contactRef },
   ];
 
-
-
   const [activeSection, setActiveSection] = useState("about");
 
   useGSAP(() => {
@@ -47,7 +45,7 @@ function NormalVersion() {
 
   return (
     <>
-      <div className="">
+      <div className="sm:p-7!">
 
         <Navbar
           activeSection={activeSection}
@@ -55,9 +53,9 @@ function NormalVersion() {
           scrollToSection={scrollToSection} />
 
         <About ref={aboutRef} />
-        <Projects ref={projectsRef} />
-        <Skills ref={skillsRef} />
-        <Contact ref={contactRef} />
+        {/* <Projects ref={projectsRef} /> */}
+        {/* <Skills ref={skillsRef} /> */}
+        {/* <Contact ref={contactRef} /> */}
       </div>
     </>
   );
