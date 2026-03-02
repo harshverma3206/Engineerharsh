@@ -52,10 +52,13 @@ const Skills = forwardRef((props, ref) => {
             tl.from(skill, {
                 y: 180,
                 opacity: 0,
-                stagger: .5,
+                duration: 1.5,
                 scrollTrigger: {
                     trigger: skill,
-                    start: "top 60%",
+                    scrub: 5,
+                    start: "top 70%",
+                    end: "bottom 70%",
+                    yoyo: true
                 }
 
             })
@@ -64,23 +67,27 @@ const Skills = forwardRef((props, ref) => {
                 gsap.to(skill, {
                     scale: 1.1,
                     y: -35,
-                    duration: 0.4,
-                    ease: "power2.out"
+                    duration: .3,
+                    overwrite: "auto",
+                    ease: "power1.Out",
+                    boxShadow: "0px 10px 10px rgba(0,0,0,0.2)"
                 })
             })
             skill.addEventListener("mouseleave", () => {
                 gsap.to(skill, {
                     scale: 1,
+                    duration: .3,
                     y: 0,
-                    duration: 0.3,
-                    ease: "power2.out",
+                    overwrite: "auto",
+                    ease: "power1.Out",
+                    boxShadow: "0px 0px 0px rgba(0,0,0,0.2)"
                 });
             });
         })
     })
 
     return (
-        <section ref={ref} className="overflow-hidden py-12!">
+        <section ref={ref} className="overflow-hidden mt-12!">
 
             <h1 className="">
                 skills that I own
@@ -90,11 +97,11 @@ const Skills = forwardRef((props, ref) => {
                 ref={containerRef}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className="flex gap-7 mt-8! cursor-pointer py-12 w-[83%] mx-auto! overflow-hidden"
+                className="flex gap-3.5 lg:gap-7 lg:mt-8! cursor-pointer w-[83%] mx-auto! overflow-hidden"
             >
 
                 {/* First Row */}
-                <div ref={moverefOne} className="flex gap-7 py-12!">
+                <div ref={moverefOne} className="flex gap-3.5 lg:gap-7 py-12!">
                     {skillData.map((val, index) => (
                         <div
                             key={index}
@@ -106,7 +113,7 @@ const Skills = forwardRef((props, ref) => {
                 </div>
 
                 {/* Duplicate Row (Infinite Effect) */}
-                <div ref={moverefTwo} className="flex gap-7 py-12!">
+                <div ref={moverefTwo} className="flex gap-3.5 lg:gap-7 py-12!">
                     {skillData.map((val, index) => (
                         <div
                             key={`duplicate-${index}`}

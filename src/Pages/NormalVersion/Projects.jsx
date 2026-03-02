@@ -33,16 +33,17 @@ const Projects = forwardRef((props, ref) => {
     useGSAP(() => {
 
         gsap.utils.toArray('.card').forEach((card) => {
+
             gsap.to(card, {
-                scale: 0.8,
+                scale: 0.2,
                 opacity: 0,
                 scrollTrigger: {
                     trigger: card,
                     scrub: 2,
                     start: "top 10%",
-                    end: "bottom 10%",
-                    pin:true
-                 
+                    end: "bottom 30%",
+                    pin: true,
+                    
                 }
             })
         })
@@ -50,9 +51,9 @@ const Projects = forwardRef((props, ref) => {
 
 
     return (
-        <section ref={ref} className="p-10! ">
+        <section ref={ref} className="p-10!">
 
-            <h1 className="lg:w-200 m-auto! ">
+            <h1 className="proHead lg:w-200 m-auto!">
                 help founders to convert
                 ideas into digital
                 experience
@@ -63,7 +64,7 @@ const Projects = forwardRef((props, ref) => {
                     <div
                         ref={ref}
                         key={index}
-                        className="card flex flex-col items-center text-center justify-center p-4! rounded-2xl lg:rounded-4xl bg-orange-600 text-orange-50 lg:w-280 lg:px-44! lg:py-22! sticky top-[10%]"
+                        className="card flex flex-col items-center text-center justify-center p-4! rounded-2xl lg:rounded-4xl bg-orange-600 text-orange-50 lg:w-300 lg:px-44! lg:py-22! sticky top-[10%]"
                     >
                         <img
                             className="rounded-xl w-182.5 object-cover"
