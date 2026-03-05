@@ -8,7 +8,7 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <HelmetProvider>
-    <BrowserRouter basename="/Harsh_Portfolio_V25_01">
+    <BrowserRouter >
       <App />
     </BrowserRouter>
   </HelmetProvider>
